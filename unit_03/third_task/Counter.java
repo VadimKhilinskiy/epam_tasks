@@ -7,8 +7,7 @@ public class Counter {
     private int rightBorder;
     private int currentTime;
 
-    public Counter()
-    {
+    public Counter() {
         leftBorder = 0;
         rightBorder = 10;
         currentTime = 0;
@@ -20,22 +19,24 @@ public class Counter {
         this.currentTime = currentTime;
     }
 
-    public void increase() throws TimeException
-    {
-        this.currentTime++;
-        if(this.currentTime>this.rightBorder)
-        {
-            throw new TimeException(">");
-        }
+    public int getLeftBorder() {
+        return leftBorder;
     }
 
-    public void decrease() throws TimeException
-    {
-        this.currentTime--;
-        if(this.currentTime<this.leftBorder)
-        {
-            throw new TimeException("<");
-        }
+    public void setLeftBorder(int leftBorder) {
+        this.leftBorder = leftBorder;
+    }
+
+    public int getRightBorder() {
+        return rightBorder;
+    }
+
+    public void setRightBorder(int rightBorder) {
+        this.rightBorder = rightBorder;
+    }
+
+    public void setCurrentTime(int currentTime) {
+        this.currentTime = currentTime;
     }
 
     public int getCurrentTime()

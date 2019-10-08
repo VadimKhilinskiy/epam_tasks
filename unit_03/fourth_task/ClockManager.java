@@ -3,13 +3,15 @@ package fourth_task;
 public class ClockManager {
     private Clock clock;
 
-    public ClockManager()
-    {
+    public ClockManager() {
         clock = new Clock();
     }
 
-    private void checkTime()
-    {
+    public Clock getClock() {
+        return clock;
+    }
+
+    private void checkTime() {
         if(clock.getHours()>Clock.MAX_HOUR||clock.getHours()<Clock.MIN_HOUR)
         {
             clock.setHours(0);
@@ -24,8 +26,7 @@ public class ClockManager {
         }
     }
 
-    public void addTime(int hours, int minutes, int seconds)
-    {
+    public void addTime(int hours, int minutes, int seconds) {
         if(clock.getSeconds()+seconds>Clock.MAX_SECOND)
         {
             clock.setSeconds(clock.getSeconds()+seconds-Clock.MAX_SECOND-1);
@@ -42,34 +43,25 @@ public class ClockManager {
         }else clock.setHours(clock.getHours()+hours);
     }
 
-    public void setTime(int hour, int minutes, int seconds)
-    {
+    public void setTime(int hour, int minutes, int seconds) {
         clock.setHours(hour);
         clock.setMinutes(minutes);
         clock.setSeconds(seconds);
         this.checkTime();
     }
 
-    public void setHours(int hours)
-    {
+    public void setHours(int hours) {
         clock.setHours(hours);
         checkTime();
     }
 
-    public void setMinutes(int minutes)
-    {
+    public void setMinutes(int minutes) {
         clock.setHours(minutes);
         checkTime();
     }
-    public void setSeconds(int seconds)
-    {
+    public void setSeconds(int seconds) {
         clock.setHours(seconds);
         checkTime();
-    }
-
-    public void printTime()
-    {
-        System.out.println(clock.toString());
     }
 
 }

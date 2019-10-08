@@ -19,19 +19,6 @@ public class Customer {
         this.numberBankAccount = numberBankAccount;
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", surname='" + surname + '\'' +
-                ", name='" + name + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", address='" + address + '\'' +
-                ", numberCreditCard=" + numberCreditCard +
-                ", numberBankAccount=" + numberBankAccount +
-                '}';
-    }
-
     public int getId() {
         return id;
     }

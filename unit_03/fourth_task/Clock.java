@@ -22,15 +22,6 @@ public class Clock {
     public static final int MIN_MINUTE = 0;
     public static final int MIN_SECOND = 0;
 
-    @Override
-    public String toString() {
-        return "Clock{" +
-                "hours=" + hours +
-                ", minutes=" + minutes +
-                ", seconds=" + seconds +
-                '}';
-    }
-
 
     public int getHours() {
         return hours;

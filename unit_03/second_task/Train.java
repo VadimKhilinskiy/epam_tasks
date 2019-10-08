@@ -38,13 +38,5 @@ public class Train implements Serializable {
         this.departureTime = departureTime;
     }
 
-    @Override
-    public String toString()
-    {
-        return "Minsk - "+this.destination+
-                "\n #"+this.number+
-                "\n Time:"+this.departureTime.toString();
-    }
-
 
 }
