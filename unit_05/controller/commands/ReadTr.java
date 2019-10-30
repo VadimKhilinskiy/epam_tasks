@@ -13,15 +13,13 @@ public class ReadTr implements Command {
         String[] params = request.split(" ");
         int id = Integer.parseInt(params[1]);
         String response = null;
-
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         TransactionService transactionService = serviceFactory.getTransactionService();
-
         try {
             Transaction transaction = transactionService.readTransaction(id);
             response = transaction.getId() + " " + transaction.getDescription() + " " + transaction.getSum();
         } catch (ServiceException e) {
-            response = "Error during reading transaction";
+            response = "Reading transaction error";
         }
 
         return response;

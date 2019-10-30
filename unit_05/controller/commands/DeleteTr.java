@@ -11,15 +11,13 @@ public class DeleteTr implements Command {
         String[] params = request.split(" ");
         int id = Integer.parseInt(params[1]);
         String response = null;
-
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         TransactionService transactionService = serviceFactory.getTransactionService();
-
         try {
             transactionService.deleteTransaction(id);
-            response = "Transaction successfully deleted";
+            response = "Transaction deleted";
         } catch(ServiceException e) {
-            response = "Error during deleting transaction";
+            response = "Deleting transaction error";
         }
 
         return response;

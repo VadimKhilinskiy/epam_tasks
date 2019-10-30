@@ -14,18 +14,15 @@ public class UpdateTr implements Command {
         int id = Integer.parseInt(params[1]);
         String description = params[2];
         double sum = Double.parseDouble(params[3]);
-
         String response = null;
-
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         TransactionService transactionService = serviceFactory.getTransactionService();
-
         try {
             int newId = serviceFactory.getIdGenerator().nextId();
             transactionService.updateTransaction(id, new Transaction(newId, description, sum));
-            response = "Transaction successfully updated";
+            response = "Transaction updated";
         } catch (ServiceException e) {
-            response = "Error during updating transaction";
+            response = "Updating transaction error";
         }
 
         return response;

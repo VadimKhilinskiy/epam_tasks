@@ -10,7 +10,6 @@ public class UserService {
         if (authInfo.getLogin() == null || authInfo.getLogin().isEmpty()) {
             throw new ServiceException("Incorrect login");
         }
-
         try {
             DAOFactory daoFactory = DAOFactory.getInstance();
             UserDAO userDAO = daoFactory.getUserDAO();
@@ -23,7 +22,4 @@ public class UserService {
         }
     }
 
-    public void signOut(AutorisationInfo authInfo) throws ServiceException {
-
-    }
 }

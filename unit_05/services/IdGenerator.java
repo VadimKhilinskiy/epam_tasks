@@ -14,12 +14,11 @@ public class IdGenerator {
     public int nextId() throws ServiceException {
         DAOFactory daoFactory = DAOFactory.getInstance();
         TransactionDAO transactionDAO = daoFactory.getTransactionDAO();
-
         try {
             int lastId = transactionDAO.lastId();
             return lastId + 1;
         } catch (DAOException e) {
-            throw new ServiceException(e.getMessage());
+            throw new ServiceException(e);
         }
     }
 }

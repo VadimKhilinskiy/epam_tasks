@@ -8,17 +8,11 @@ public class Controller {
         return instance;
     }
 
-    public String executeTask(String request) {
+    public String executeQuery(String request) {
         String[] params = request.split(" ");
-        String commandName;
-        Command executionCommand;
-
-        commandName = params[0];
-        executionCommand = provider.getCommand(commandName);
-
-        String response;
-        response = executionCommand.execute(request);
-
+        String commandName = params[0];
+        Command executionCommand = provider.getCommand(commandName);
+        String response = executionCommand.execute(request);
         return response;
     }
 }
